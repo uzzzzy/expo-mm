@@ -1,17 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native';
+import Container from '@/components/container';
+import { Text } from 'react-native';
 
 export default function SettingScreen() {
   return (
-    <View style={styles.container}>
+    <Container>
       <Text>Setting</Text>
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
