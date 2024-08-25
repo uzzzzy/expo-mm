@@ -16,10 +16,7 @@ export default function HomeScreen() {
 
         <Link href="/setting">
           <View style={styles.button}>
-            <Text style={{
-              fontFamily: 'SpaceMono',
-              fontSize: 48,
-            }}>Setting</Text>
+            <Text>Setting</Text>
           </View>
         </Link>
       </View>

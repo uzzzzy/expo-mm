@@ -1,7 +1,10 @@
 import Colors from '@/constants/colors';
+import Fonts from '@/constants/fonts';
 import { isLoaded } from 'expo-font';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import Text from '@/components/Text';
 
 export default function Container({ children }: { children: React.ReactNode }) {
 
@@ -38,7 +41,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
-    fontFamily: 'PTSans-Bold',
+    fontSize: 24
   },
 });
