@@ -1,20 +1,43 @@
-import { Link } from 'expo-router';
 import { View, StyleSheet } from 'react-native';
 
 import Container from '@/components/container';
-import Text from '@/components/Text';
+import TextInput from '@/components/TextInput';
+import { useState } from 'react';
 
 export default function HomeScreen() {
+  const [target, setTarget] = useState<number>(0);
+
+  const handleChange = (value: string) => {
+    value = value.replace(/[^0-9]/g, '');
+
+    setTarget(value ? parseInt(value) : 0);
+  };
+
+  const formattedTarget = target.toLocaleString('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+    currencySign: 'accounting',
+  });
+
   return (
     <Container>
       <View style={styles.container}>
-        <Text>Home Screen</Text>
-
-        <Link href="/setting">
-          <View style={styles.button}>
-            <Text>Setting</Text>
-          </View>
-        </Link>
+        <TextInput
+          keyboardType="numeric"
+          placeholder="Username"
+          onChangeText={handleChange}
+          value={formattedTarget}
+          style={{
+            textAlign: 'right',
+          }}
+        />
+        <TextInput
+          keyboardType="numeric"
+          placeholder="Password"
+          onChangeText={handleChange}
+          value={formattedTarget}
+        />
       </View>
     </Container>
   );
@@ -23,8 +46,8 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingTop: 16,
+    paddingBottom: 32,
   },
   button: {
     backgroundColor: '#69afbe',
