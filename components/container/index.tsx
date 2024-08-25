@@ -1,16 +1,20 @@
 import Colors from '@/constants/colors';
+import { isLoaded } from 'expo-font';
 import { View, StyleSheet, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function Container({ children }: { children: React.ReactNode }) {
+
   const insets = useSafeAreaInsets()
+
+  console.log('SpaceMono: ', isLoaded('SpaceMono'));
 
   return (
     <View style={{ flex: 1, paddingTop: insets.top + 8 }}>
       <View style={styles.header}>
         <View/>
         <Text style={styles.title}>
-          Menghitung Mimpi
+          Setting
         </Text>
         <View />
       </View>
@@ -34,8 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    fontFamily: 'PTSans',
+    fontSize: 24,
+    fontFamily: 'PTSans-Bold',
   },
 });

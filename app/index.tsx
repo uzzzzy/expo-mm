@@ -1,27 +1,26 @@
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet } from 'react-native';
 
-import { useFonts } from 'expo-font';
+import * as Font from 'expo-font';
 
 import Container from '@/components/container';
 
 export default function HomeScreen() {
-  const [fontsLoaded] = useFonts({
-    'SpaceMono': require('../assets/fonts/SpaceMono-Regular.ttf'),
-    'PTSans': require('../assets/fonts/PTSans.ttf'),
-  })
-
-  if (!fontsLoaded) {
-    return null;
-  }
+  console.log('SpaceMono: ', Font.isLoaded('SpaceMono'));
+  console.log('PTSans: ', Font.isLoaded('PTSans'));
 
   return (
     <Container>
       <View style={styles.container}>
-        <Text>Home</Text>
+        <Text>Home Screen</Text>
 
         <Link href="/setting">
-          <Text>Setting</Text>
+          <View style={styles.button}>
+            <Text style={{
+              fontFamily: 'SpaceMono',
+              fontSize: 48,
+            }}>Setting</Text>
+          </View>
         </Link>
       </View>
     </Container>
@@ -33,5 +32,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  button: {
+    backgroundColor: '#69afbe',
+    paddingHorizontal: 48,
+    paddingVertical: 8,
+    borderRadius: 8,
+    marginTop: 16,
   },
 });

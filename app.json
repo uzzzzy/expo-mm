@@ -34,7 +34,10 @@
         {
           "fonts": [
             "./assets/fonts/SpaceMono-Regular.ttf",
-            "./assets/fonts/PTSans.ttf"
+            "./assets/fonts/PTSans.ttf",
+            "./assets/fonts/PTSans-Bold.ttf",
+            "./assets/fonts/PTSans-BoldItalic.ttf",
+            "./assets/fonts/PTSans-Italic.ttf"
           ]
         }
       ]
