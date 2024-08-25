@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from 'expo-font';
-import { Text } from "react-native";
+
+import Text from '@/components/Text';
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
@@ -20,7 +21,7 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerShown: false, animation: 'ios' }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="setting/index"  />
     </Stack>

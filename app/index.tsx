@@ -1,14 +1,10 @@
 import { Link } from 'expo-router';
-import { View, Text, StyleSheet } from 'react-native';
-
-import * as Font from 'expo-font';
+import { View, StyleSheet } from 'react-native';
 
 import Container from '@/components/container';
+import Text from '@/components/Text';
 
 export default function HomeScreen() {
-  console.log('SpaceMono: ', Font.isLoaded('SpaceMono'));
-  console.log('PTSans: ', Font.isLoaded('PTSans'));
-
   return (
     <Container>
       <View style={styles.container}>

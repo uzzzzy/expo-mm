@@ -5,30 +5,32 @@ import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Text from '@/components/Text';
+import { StatusBar } from 'expo-status-bar';
 
 export default function Container({ children }: { children: React.ReactNode }) {
-
-  const insets = useSafeAreaInsets()
-
-  console.log('SpaceMono: ', isLoaded('SpaceMono'));
+  const insets = useSafeAreaInsets();
 
   return (
-    <View style={{ flex: 1, paddingTop: insets.top + 8 }}>
-      <View style={styles.header}>
-        <View/>
-        <Text style={styles.title}>
-          Setting
-        </Text>
-        <View />
+    <View style={{ flex: 1 }}>
+      <View style={[styles.statusBar, { paddingTop: insets.top }]} />
+      <View style={{ flex: 1 }}>
+        <View style={styles.header}>
+          <View />
+          <Text style={styles.title}>Setting</Text>
+          <View />
+        </View>
+        <View style={styles.container}>{children}</View>
       </View>
-      <View style={styles.container}>
-        {children}
-      </View>
+
+      <StatusBar style="light" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  statusBar: {
+    backgroundColor: Colors.primary900,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.primary300,
@@ -41,6 +43,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 24
+    fontSize: 24,
   },
 });

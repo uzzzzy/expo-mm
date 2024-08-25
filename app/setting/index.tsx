@@ -1,5 +1,5 @@
 import Container from '@/components/container';
-import { Text } from 'react-native';
+import Text from '@/components/Text';
 
 export default function SettingScreen() {
   return (
