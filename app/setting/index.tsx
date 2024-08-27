@@ -1,10 +1,9 @@
-import Container from '@/components/container';
-import Text from '@/components/Text';
+import { Text, View } from 'react-native';
 
 export default function SettingScreen() {
   return (
-    <Container>
+    <View>
       <Text>Setting</Text>
-    </Container>
+    </View>
   );
 }

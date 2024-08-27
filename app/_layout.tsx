@@ -1,7 +1,7 @@
+import { Text } from "react-native";
+
 import { Stack } from "expo-router";
 import { useFonts } from 'expo-font';
-
-import Text from '@/components/Text';
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
