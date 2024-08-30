@@ -1,45 +1,12 @@
-import { View, StyleSheet } from 'react-native';
-
-import Container from '@/components/container';
-import TextInput from '@/components/TextInput';
-import { useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
-  const [target, setTarget] = useState<number>(0);
-
-  const handleChange = (value: string) => {
-    value = value.replace(/[^0-9]/g, '');
-
-    setTarget(value ? parseInt(value) : 0);
-  };
-
-  const formattedTarget = target.toLocaleString('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0,
-    currencySign: 'accounting',
-  });
-
+  const insets = useSafeAreaInsets();
   return (
-    <Container>
-      <View style={styles.container}>
-        <TextInput
-          keyboardType="numeric"
-          placeholder="Username"
-          onChangeText={handleChange}
-          value={formattedTarget}
-          style={{
-            textAlign: 'right',
-          }}
-        />
-        <TextInput
-          keyboardType="numeric"
-          placeholder="Password"
-          onChangeText={handleChange}
-          value={formattedTarget}
-        />
-      </View>
-    </Container>
+    <View style={{ flex: 1, paddingTop: insets.top }}>
+      <Text>Home</Text>
+    </View>
   );
 }
 
