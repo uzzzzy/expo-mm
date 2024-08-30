@@ -1,6 +1,5 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 
-import { Stack } from "expo-router";
 import { useFonts } from 'expo-font';
 
 export default function RootLayout() {
@@ -21,8 +20,8 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false, animation: 'ios' }}>
-      <Stack.Screen name="index" />
-    </Stack>
+    <View>
+      <Text>Error loading fonts: </Text>
+    </View>
   );
 }
