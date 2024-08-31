@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import PrimaryIcon from './components/button/icons/primary';
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
@@ -17,6 +18,11 @@ export default function HomeScreen() {
           <Text style={styles.bannerText}>
             Menghitung Mimpi
           </Text>
+        </View>
+        <View style={styles.card}>
+          <View style={styles.menu}>
+            <PrimaryIcon title="Kalkulator Investasi" icon={'calculator'} to="kalkulator-investasi" />
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -32,16 +38,29 @@ const styles = StyleSheet.create({
   },
   banner: {
     width: '100%',
-    aspectRatio: 3 / 2,
+    aspectRatio: 6 / 3,
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomWidth: 0.5,
   },
   bannerText: {
-    fontSize: 24,
-    fontFamily: 'PTSans-Bold',
+    fontSize: 32,
+    fontFamily: 'Poppins-Thin',
   },
   container: {
     flex: 1,
     position: 'relative',
   },
+
+  card: {
+    width: '100%',
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 16,
+    backgroundColor: '#ffffff',
+  },
+  menu: {
+    flexDirection: 'row',
+  },
+
 });
